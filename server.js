@@ -5,27 +5,32 @@ const server = http.createServer((req, res) => {
     console.log(req.url)
 
     file = ""
-    if(req.url === "/react"){
-        file = fs.readFileSync("reactjs/index.html")
+
+    if(req.url === "/"){
+        file = fs.readFileSync("index.html")
+        file = file.toString().replace("{{title}}", "Libs JS Frontend")
+    }
+
+    if(req.url === "/vanillajs"){
+        file = fs.readFileSync("vanillajs/index.html")
+    }
+    
+    if(req.url === "/jquery"){
+        file = fs.readFileSync("jqueryjs/index.html")
     }
     
     if(req.url === "/angular"){
         file = fs.readFileSync("angularjs/index.html")
-
+    }
+    
+    if(req.url === "/react"){
+        file = fs.readFileSync("reactjs/index.html")
     }
 
-    if(req.url === "/"){
-        file = fs.readFileSync("index.html")
-
-        file = file.toString().replace("{{title}}", "Estou na HOME VELHO!!!")
-
+    if(req.url === "/vue"){
+        file = fs.readFileSync("vuejs/index.html")
     }
-   const fileindex = fs.readFileSync("index.html")
-   const fileVanilla = fs.readFileSync("vanillajs/index.html")
-   const fileJquery = fs.readFileSync("jqueryjs/index.html")
-   const angularjs = fs.readFileSync("angularjs/index.html")
-   const reactjs = fs.readFileSync("reactjs/index.html")
-   const vuejs = fs.readFileSync("vuejs/index.html")
+
     res.end(file)
 })
 
