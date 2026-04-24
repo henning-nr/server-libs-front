@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meuApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactJS</title>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    
+    <!-- AQUI FOI TEMPLATE JS PURO E JQUERY -->
+    <!-- <div>
+        <h1>Estou em JqueryJS</h1>
+        <h3>Mudando texto e a cor</h3>
+        <button>Mudar cor</button>
+    </div> -->
+    
+    
+    <!-- AQUI FOI TEMPLATE COM ANGULAR -->
+    <!-- <div ng-controller="control">
+        <h1>Estou em ReactJS</h1>
+        <h3 ng-style="{color: cor}">{{ title }}</h3>
+        <button ng-click="mudarCor()">Mudar cor</button>
+    </div> -->
+    
+    
+    <!-- REACTJS (LIB) -> /BIBLIOTECA/MODULO/PACOTE -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+
+    <!-- JQUERYJS (LIB) -> /BIBLIOTECA/MODULO/PACOTE -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    
+    <!-- ANGULARJS (LIB) -> /BIBLIOTECA/MODULO/PACOTE -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script> -->
+
+    <script>
+
+        const { useState } = React
+
+        function App() {
+            const [cor, setCor] = useState("black")
+            const [title, setTitle] = useState("Mudando texto e a cor")
+
+            function mudarCor() {
+                if (cor === "black") {
+                    setTitle("Mudando texto e a cor")
+                    setCor("red")
+                } else {
+                    setTitle("Mudar o texto e a cor aqui")
+                    setCor("black")
+                }
+            }
+
+            return React.createElement("div", null,
+                React.createElement("h1", null, "Estou em ReactJS"),
+                React.createElement("h3", { style: { color: cor } }, title),
+                React.createElement("button", { onClick: mudarCor }, "Mudar cor"),
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(
+            React.createElement(App)
+        )
+
+
+
+
+
+
+        // AQUI COM ANGULARJS
+
+        // let meuApp = angular.module("meuApp", [])
+
+        // meuApp.controller("control", ($scope) => {
+        //     $scope.title = "Mudando texto e a cor"
+        //     $scope.cor = "black"
+        //     $scope.mudarCor = () => {
+        //         if ($scope.cor == "black") {
+        //             $scope.title = "Mudando texto e a cor"
+        //             $scope.cor = "red"
+        //         } else {
+        //             $scope.cor = "black"
+        //             $scope.title = "Texto mudado e a cor"
+
+        //         }
+        //     }
+        //     // $scope.title = "Estou mudando o texto a cor"
+        // })
+
+
+        // ===============================================
+
+        // AQUI FOI COM JQUERYJS
+        // $("button").on("click", () => {
+        //     console.log("ss", ($("h3").css("color")))
+        //     if ($("h3").css("color") === "rgb(0, 0, 0)") {
+        //         $("h3").text("Mudando texto e a cor")
+        //         $("h3").css("color", "rgb(255, 0, 0)")
+        //     } else {
+        //         $("h3").text("Texto foi modificado")
+        //         $("h3").css("color", "rgb(0, 0, 0)")
+        //     }
+        // })
+
+        // ===============================================
+
+        // AQUI FOI JS PURO
+        // const h3 = document.querySelector("h3")
+        // const button = document.querySelector("button")
+
+        // button.addEventListener("click", () => {
+        //     if (h3.style.color == "red") {
+        //         h3.innerText = "Mudando texto e a cor"
+        //         h3.style.color = "black"
+        //     } else {
+        //         h3.innerText = "Texto foi modificado"
+        //         h3.style.color = "red"
+        //     }
+        // })
+
+    </script>
+</body>
+
+</html>
