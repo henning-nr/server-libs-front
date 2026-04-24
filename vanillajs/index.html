@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanillajs</title>
+</head>
+
+<body>
+    <h1>Estou em Javascript Puro</h1>
+    <h3>Mudando texto e a cor</h3>
+    <button>Mudar cor</button>
+
+
+    <script>
+        const h3 = document.querySelector("h3")
+        const button = document.querySelector("button")
+
+        button.addEventListener("click", () => {
+            if (h3.style.color == "red") {
+                h3.innerText = "Mudando texto e a cor"
+                h3.style.color = "black"
+            } else {
+                h3.innerText = "Texto foi modificado"
+                h3.style.color = "red"
+            }
+        })
+
+    </script>
+</body>
+
+</html>

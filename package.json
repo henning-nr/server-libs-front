@@ -1,0 +1,23 @@
+{
+  "name": "server-libs-front",
+  "version": "1.0.0",
+  "description": "Servidor básico com http node servindo app fronts com libs js de aplicações frontends",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henning-nr/server-libs-front.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/henning-nr/server-libs-front/issues"
+  },
+  "homepage": "https://github.com/henning-nr/server-libs-front#readme"
+}

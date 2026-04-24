@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meuApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JqueryJS</title>
+</head>
+
+<body>
+    <div ng-controller="control">
+        <h1>Estou em JqueryJS</h1>
+        <h3 ng-style="{color: cor}">{{ title }}</h3>
+        <button ng-click="mudarCor()">Mudar cor</button>
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+
+    <script>
+
+        let meuApp = angular.module("meuApp", [])
+
+        meuApp.controller("control", ($scope) => {
+            $scope.title = "Mudando texto e a cor"
+            $scope.cor = "black"
+            $scope.mudarCor = () => {
+                if ($scope.cor == "black") {
+                    $scope.title = "Mudando texto e a cor"
+                    $scope.cor = "red"
+                } else {
+                    $scope.cor = "black"
+                    $scope.title = "Texto mudado e a cor"
+
+                }
+            }
+            // $scope.title = "Estou mudando o texto a cor"
+        })
+
+
+
+
+        // $("button").on("click", () => {
+        //     console.log("ss", ($("h3").css("color")))
+        //     if ($("h3").css("color") === "rgb(0, 0, 0)") {
+        //         $("h3").text("Mudando texto e a cor")
+        //         $("h3").css("color", "rgb(255, 0, 0)")
+        //     } else {
+        //         $("h3").text("Texto foi modificado")
+        //         $("h3").css("color", "rgb(0, 0, 0)")
+        //     }
+        // })
+
+
+        // const h3 = document.querySelector("h3")
+        // const button = document.querySelector("button")
+
+        // button.addEventListener("click", () => {
+        //     if (h3.style.color == "red") {
+        //         h3.innerText = "Mudando texto e a cor"
+        //         h3.style.color = "black"
+        //     } else {
+        //         h3.innerText = "Texto foi modificado"
+        //         h3.style.color = "red"
+        //     }
+        // })
+
+    </script>
+</body>
+
+</html>
